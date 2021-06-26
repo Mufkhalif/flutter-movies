@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:food_app/pages/bottomtab/tickets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -26,22 +26,15 @@ class _HomeMovieState extends State<HomeMovie> {
   }) {
     return BottomNavigationBarItem(
       icon: Container(
+        padding: EdgeInsets.only(top: 12),
         child: Column(
           children: [
-            isActive
-                ? Image.asset(
-                    'assets/images/ic_movies_active.png',
-                    width: 20,
-                    height: 20,
-                  )
-                : SvgPicture.asset(
-                    assets,
-                    width: 20,
-                    height: 20,
-                  ),
-            SizedBox(
-              height: 5,
+            Image.asset(
+              assets,
+              width: 20,
+              height: 20,
             ),
+            SizedBox(height: 5),
             Text(
               title,
               style: GoogleFonts.poppins(
@@ -68,23 +61,31 @@ class _HomeMovieState extends State<HomeMovie> {
           backgroundColor: Colors.red,
           items: [
             bottomNavigationBarItem(
-              assets: 'assets/images/ic_tickets.svg',
+              assets: _selectedIndex == 0
+                  ? 'assets/images/ic_movies_active.png'
+                  : 'assets/images/ic_movies.png',
               title: 'Movies',
               isActive: _selectedIndex == 0,
             ),
             bottomNavigationBarItem(
-              assets: 'assets/images/ic_tickets.svg',
+              assets: _selectedIndex == 1
+                  ? 'assets/images/ic_tickets_active.png'
+                  : 'assets/images/ic_tickets.png',
               title: 'Tickets',
               isActive: _selectedIndex == 1,
             ),
             bottomNavigationBarItem(
-              assets: 'assets/images/ic_cinema.svg',
+              assets: _selectedIndex == 2
+                  ? 'assets/images/ic_cinema_active.png'
+                  : 'assets/images/ic_cinema.png',
               title: 'Cinema',
               isActive: _selectedIndex == 2,
             ),
             bottomNavigationBarItem(
-              assets: 'assets/images/ic_profile.svg',
-              title: 'Profile',
+              assets: _selectedIndex == 3
+                  ? 'assets/images/ic_favorite_active.png'
+                  : 'assets/images/ic_favourite.png',
+              title: 'Favorite',
               isActive: _selectedIndex == 3,
             ),
           ],
@@ -95,102 +96,109 @@ class _HomeMovieState extends State<HomeMovie> {
           selectedItemColor: Colors.amber[800],
           onTap: _onItemTapped,
         ),
-        appBar: AppBar(
-          backgroundColor: Color(0xFF191926),
-          title: Container(
-            margin: EdgeInsets.only(bottom: 5),
-            child: Row(
-              children: [
-                Image.asset(
-                  'assets/images/ic_location.png',
-                  width: 16,
-                  height: 16,
-                ),
-                SizedBox(width: 10),
-                Text(
-                  'Warszawa,poland',
-                  style: GoogleFonts.poppins(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
+        appBar: _selectedIndex == 0
+            ? AppBar(
+                backgroundColor: Color(0xFF191926),
+                title: Container(
+                  margin: EdgeInsets.only(bottom: 5),
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        'assets/images/ic_location.png',
+                        width: 16,
+                        height: 16,
+                      ),
+                      SizedBox(width: 10),
+                      Text(
+                        'Warszawa,poland',
+                        style: GoogleFonts.poppins(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                      Spacer(),
+                      Icon(
+                        Icons.search,
+                        color: Color(0xFF6D6D80),
+                      )
+                    ],
                   ),
                 ),
-                Spacer(),
-                Icon(
-                  Icons.search,
-                  color: Color(0xFF6D6D80),
-                )
-              ],
-            ),
-          ),
-          bottom: TabBar(
-            onTap: (int e) {
-              setState(() {
-                _selectedTabIndex = e;
-              });
-            },
-            isScrollable: true,
-            indicator: BoxDecoration(
-              border: Border(
-                bottom: BorderSide(
-                  width: 3.0,
-                  color: Color(0xFFFF3365),
-                ),
-              ),
-            ),
-            tabs: [
-              Tab(
-                child: TabbarItem(
-                  title: 'Near You',
-                  isActive: _selectedTabIndex == 0,
-                ),
-              ),
-              Tab(
-                child: TabbarItem(
-                  title: 'Comming soon',
-                  isActive: _selectedTabIndex == 1,
-                ),
-              ),
-              Tab(
-                child: TabbarItem(
-                  title: 'Premiers',
-                  isActive: _selectedTabIndex == 2,
+                bottom: TabBar(
+                  onTap: (int e) {
+                    setState(() {
+                      _selectedTabIndex = e;
+                    });
+                  },
+                  isScrollable: true,
+                  indicator: BoxDecoration(
+                    border: Border(
+                      bottom: BorderSide(
+                        width: 3.0,
+                        color: Color(0xFFFF3365),
+                      ),
+                    ),
+                  ),
+                  tabs: [
+                    Tab(
+                      child: TabbarItem(
+                        title: 'Near You',
+                        isActive: _selectedTabIndex == 0,
+                      ),
+                    ),
+                    Tab(
+                      child: TabbarItem(
+                        title: 'Comming soon',
+                        isActive: _selectedTabIndex == 1,
+                      ),
+                    ),
+                    Tab(
+                      child: TabbarItem(
+                        title: 'Premiers',
+                        isActive: _selectedTabIndex == 2,
+                      ),
+                    )
+                  ],
                 ),
               )
-            ],
-          ),
-        ),
-        body: TabBarView(
-          children: [
-            Container(
-              margin: EdgeInsets.only(
-                left: 5,
-                right: 5,
-                top: 10,
+            : AppBar(
+                backgroundColor: Color(0xFF191926),
               ),
-              child: StaggeredGridView.countBuilder(
-                crossAxisCount: 4,
-                itemCount: 8,
-                itemBuilder: (BuildContext context, int index) => CardMovie(),
-                staggeredTileBuilder: (int index) => StaggeredTile.count(
-                  2,
-                  index.isEven ? 3 : 3.1,
-                ),
-                mainAxisSpacing: 10.0,
-                crossAxisSpacing: 10.0,
-              ),
-            ),
-            Column(
-              children: [
-                Text('hello'),
-              ],
-            ),
-            Column(
-              children: [
-                Text('hello'),
-              ],
-            )
-          ],
-        ),
+        body: _selectedIndex == 0
+            ? TabBarView(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(
+                      left: 5,
+                      right: 5,
+                      top: 10,
+                    ),
+                    child: StaggeredGridView.countBuilder(
+                      crossAxisCount: 4,
+                      itemCount: 8,
+                      itemBuilder: (BuildContext context, int index) =>
+                          CardMovie(),
+                      staggeredTileBuilder: (int index) => StaggeredTile.count(
+                        2,
+                        index.isEven ? 3 : 3.1,
+                      ),
+                      mainAxisSpacing: 10.0,
+                      crossAxisSpacing: 10.0,
+                    ),
+                  ),
+                  Column(
+                    children: [
+                      Text('hello'),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Text('hello'),
+                    ],
+                  )
+                ],
+              )
+            : TicketView(),
       ),
     );
   }
@@ -310,7 +318,7 @@ class CardMovie extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      'Action, adventure',
+                      'Action, Adventure',
                       style: GoogleFonts.poppins(
                         color: Color(0xFFFF3466),
                         fontSize: 12,
