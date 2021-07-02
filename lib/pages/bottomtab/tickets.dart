@@ -91,40 +91,43 @@ class CardTicket extends StatelessWidget {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Wonder  Woman 1984',
-                            style: GoogleFonts.poppins(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
+                      Container(
+                        width: 130,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Wonder Woman 1984',
+                              style: GoogleFonts.poppins(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            height: 12,
-                          ),
-                          Text(
-                            'DATE & TIME',
-                            style: GoogleFonts.poppins(
-                              color: Color(0xFF6D6D80),
-                              fontWeight: FontWeight.w700,
-                              fontSize: 12,
+                            SizedBox(
+                              height: 12,
                             ),
-                          ),
-                          SizedBox(
-                            height: 2,
-                          ),
-                          Text(
-                            '27 April  •  19:00',
-                            style: GoogleFonts.poppins(
-                              color: Color(0xFFECECEC).withOpacity(0.9),
-                              fontWeight: FontWeight.w700,
-                              fontSize: 12,
+                            Text(
+                              'DATE & TIME',
+                              style: GoogleFonts.poppins(
+                                color: Color(0xFF6D6D80),
+                                fontWeight: FontWeight.w700,
+                                fontSize: 12,
+                              ),
                             ),
-                          )
-                        ],
+                            SizedBox(
+                              height: 2,
+                            ),
+                            Text(
+                              '27 April  •  19:00',
+                              style: GoogleFonts.poppins(
+                                color: Color(0xFFECECEC).withOpacity(0.9),
+                                fontWeight: FontWeight.w700,
+                                fontSize: 12,
+                              ),
+                            )
+                          ],
+                        ),
                       ),
                       SizedBox(
                         width: 16,
