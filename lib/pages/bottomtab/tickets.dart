@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TicketView extends StatelessWidget {
-  const TicketView({
-    Key? key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -21,10 +18,6 @@ class TicketView extends StatelessWidget {
 }
 
 class CardTicket extends StatelessWidget {
-  const CardTicket({
-    Key? key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -59,7 +52,6 @@ class CardTicket extends StatelessWidget {
               ),
             ),
             child: Stack(
-              // crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
@@ -89,10 +81,10 @@ class CardTicket extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.only(top: 5),
                   child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
-                        width: 130,
+                        width: Get.width / 4,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [

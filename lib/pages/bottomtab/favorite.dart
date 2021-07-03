@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Favorite extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      padding: EdgeInsets.symmetric(horizontal: 14),
       child: Column(
         children: [
           CardCinema(),
@@ -22,7 +24,7 @@ class CardCinema extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 270,
-      margin: EdgeInsets.only(bottom: 10),
+      margin: EdgeInsets.only(bottom: 14),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
@@ -51,7 +53,7 @@ class CardCinema extends StatelessWidget {
                 ),
                 child: Image.asset(
                   'assets/images/poster.jpg',
-                  width: 190,
+                  width: Get.width / 2 - 10,
                   height: 270,
                   fit: BoxFit.cover,
                 ),
@@ -62,7 +64,7 @@ class CardCinema extends StatelessWidget {
                   bottomLeft: Radius.circular(16),
                 ),
                 child: Container(
-                  width: 190,
+                  width: Get.width / 2 - 10,
                   height: 270,
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
@@ -79,7 +81,7 @@ class CardCinema extends StatelessWidget {
                 ),
               ),
               Container(
-                width: 190,
+                width: Get.width / 2 - 10,
                 padding: EdgeInsets.only(
                   top: 10,
                   right: 10,
@@ -111,7 +113,7 @@ class CardCinema extends StatelessWidget {
                 ),
               ),
               Container(
-                width: 190,
+                width: Get.width / 2 - 10,
                 height: 270,
                 padding: EdgeInsets.all(10),
                 child: Column(
@@ -168,7 +170,7 @@ class CardCinema extends StatelessWidget {
               vertical: 10,
             ),
             height: double.infinity,
-            width: 190,
+            width: Get.width / 2 - 20,
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,

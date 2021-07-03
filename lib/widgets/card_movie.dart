@@ -21,6 +21,7 @@ class CardMovie extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        print(item.id);
         movieC.getDetailMovie(item.id);
         Get.to(() => DetailMovie());
       },
@@ -52,16 +53,16 @@ class CardMovie extends StatelessWidget {
                     topRight: Radius.circular(16),
                   ),
                   child: Hero(
-                    tag: 'item.id',
+                    tag: item.id,
                     child: CachedNetworkImage(
                       imageUrl: item.backdropPath,
-                      width: 190,
-                      height: 220,
+                      width: double.infinity,
+                      height: Get.height * 0.26,
                       fit: BoxFit.cover,
                       placeholder: (BuildContext context, String url) =>
                           Container(
-                        width: 190,
-                        height: 220,
+                        width: double.infinity,
+                        height: Get.height * 0.26,
                         child: Image.asset(
                           'assets/images/placeholder.jpg',
                           fit: BoxFit.cover,
@@ -71,8 +72,8 @@ class CardMovie extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  width: 190,
-                  height: 220,
+                  width: double.infinity,
+                  height: Get.height * 0.26,
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       begin: Alignment.topCenter,
@@ -118,8 +119,8 @@ class CardMovie extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  width: 190,
-                  height: 220,
+                  width: double.infinity,
+                  height: Get.height * 0.26,
                   padding: EdgeInsets.all(10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
