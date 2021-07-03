@@ -155,9 +155,13 @@ class _HomeMovieState extends State<HomeMovie> {
                 bottom: TabBar(
                   onTap: (int e) {
                     if (e == 1) {
-                      movieC.loadUpComming();
+                      if (movieC.listMovieUpcomming.length == 0) {
+                        movieC.loadUpComming();
+                      }
                     } else {
-                      movieC.loadFirst();
+                      if (movieC.listMovie.length == 0) {
+                        movieC.loadFirst();
+                      }
                     }
 
                     setState(() {

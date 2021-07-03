@@ -221,11 +221,8 @@ class DetailMovie extends StatelessWidget {
                                   itemCount: movieC.casts.length,
                                   scrollDirection: Axis.horizontal,
                                   itemBuilder:
-                                      (BuildContext context, int index) {
-                                    return CardVideo(
-                                      item: movieC.casts[index],
-                                    );
-                                  },
+                                      (BuildContext context, int index) =>
+                                          CardVideo(item: movieC.casts[index]),
                                 ),
                               ),
                               SizedBox(

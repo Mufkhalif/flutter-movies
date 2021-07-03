@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/pages/detail_cast_pages.dart';
 import 'package:food_app/pages/home_movie.dart';
 import 'package:get/route_manager.dart';
 
@@ -13,7 +14,6 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       home: HomeMovie(),
-      // home: DetailMovie(),
     );
   }
 }
