@@ -18,8 +18,9 @@ class MovieModel {
   factory MovieModel.fromJson(Map<String, dynamic> json) {
     return MovieModel(
       adult: json['adult'],
-      backdropPath:
-          "https://www.themoviedb.org/t/p/original" + json['poster_path'],
+      backdropPath: json['poster_path'] != null
+          ? 'https://www.themoviedb.org/t/p/original${json['poster_path']}'
+          : "",
       title: json['title'],
       id: json['id'],
       rating: json['vote_average'].toString(),

@@ -4,8 +4,6 @@ import 'package:food_app/controllers/movieController.dart';
 import 'package:food_app/widgets/card_movie.dart';
 import 'package:get/get.dart';
 
-class TabController {}
-
 class ListMovie extends StatelessWidget {
   final MovieController movieC = Get.find<MovieController>();
   final String type;

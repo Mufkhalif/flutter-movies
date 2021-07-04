@@ -63,4 +63,15 @@ class MoviesServices {
 
     return DetailCastModel.fromJson(result);
   }
+
+  static Future getListMoviesByCastid(int id) async {
+    var url = Uri.parse(
+        '${Config.baseUrl}/3/person/$id/movie_credits?api_key=${Config.apiKey}');
+
+    var apiResult = await http.get(url);
+    var result =
+        (json.decode(apiResult.body) as Map<String, dynamic>)['cast'] as List;
+
+    return result.map((item) => MovieModel.fromJson(item)).toList();
+  }
 }

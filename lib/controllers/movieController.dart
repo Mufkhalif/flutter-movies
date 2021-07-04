@@ -54,8 +54,8 @@ class MovieController extends GetxController {
     super.onInit();
   }
 
-  void goToDetail(int id) {
-    getDetailMovie(id);
+  void goToDetail({required int id, required String posterPath}) {
+    getDetailMovie(id: id, posterPath: posterPath);
   }
 
   void loadFirst() async {
@@ -80,12 +80,15 @@ class MovieController extends GetxController {
     isLoadingMore.value = false;
   }
 
-  void getDetailMovie(int id) async {
-    detailMovie.value.id = id;
-    isLoadingDetail.value = true;
-    detailMovie.value = await MoviesServices.getDetailMovie(id);
-    casts = await MoviesServices.getMovieCasts(id);
-    update();
-    isLoadingDetail.value = false;
+  void getDetailMovie({required int id, required String posterPath}) async {
+    if (detailMovie.value.id == 0 || detailMovie.value.id != id) {
+      detailMovie.value.id = id;
+      detailMovie.value.posterPath = posterPath;
+      isLoadingDetail.value = true;
+      detailMovie.value = await MoviesServices.getDetailMovie(id);
+      casts = await MoviesServices.getMovieCasts(id);
+      update();
+      isLoadingDetail.value = false;
+    }
   }
 }

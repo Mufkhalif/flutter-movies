@@ -21,8 +21,7 @@ class CardMovie extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print(item.id);
-        movieC.getDetailMovie(item.id);
+        movieC.getDetailMovie(id: item.id, posterPath: item.backdropPath);
         Get.to(() => DetailMovie());
       },
       child: Container(
@@ -53,23 +52,30 @@ class CardMovie extends StatelessWidget {
                     topRight: Radius.circular(16),
                   ),
                   child: Hero(
-                    tag: item.id,
-                    child: CachedNetworkImage(
-                      imageUrl: item.backdropPath,
-                      width: double.infinity,
-                      height: Get.height * 0.26,
-                      fit: BoxFit.cover,
-                      placeholder: (BuildContext context, String url) =>
-                          Container(
+                      tag: item.id,
+                      child: Image.network(
+                        item.backdropPath,
                         width: double.infinity,
                         height: Get.height * 0.26,
-                        child: Image.asset(
-                          'assets/images/placeholder.jpg',
-                          fit: BoxFit.cover,
-                        ),
+                        fit: BoxFit.cover,
+                      )
+
+                      // CachedNetworkImage(
+                      //   imageUrl: item.backdropPath,
+                      // width: double.infinity,
+                      // height: Get.height * 0.26,
+                      //   fit: BoxFit.cover,
+                      //   placeholder: (BuildContext context, String url) =>
+                      //       Container(
+                      //     width: double.infinity,
+                      //     height: Get.height * 0.26,
+                      //     child: Image.asset(
+                      //       'assets/images/placeholder.jpg',
+                      //       fit: BoxFit.cover,
+                      //     ),
+                      //   ),
+                      // ),
                       ),
-                    ),
-                  ),
                 ),
                 Container(
                   width: double.infinity,

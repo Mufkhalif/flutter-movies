@@ -1,4 +1,5 @@
 import 'package:food_app/models/detail_cast_model.dart';
+import 'package:food_app/models/movie_model.dart';
 import 'package:food_app/services/get_movies.dart';
 import 'package:get/get.dart';
 
@@ -17,6 +18,8 @@ class DetailCastController extends GetxController {
     type: "",
   ).obs;
 
+  List<MovieModel> listMovies = [];
+
   void goToDetail({required int id, required String posterPath}) {
     cast.value.id = id;
     cast.value.profilePath = posterPath;
@@ -27,6 +30,7 @@ class DetailCastController extends GetxController {
   void getDetailCast(int id) async {
     isLoading.value = true;
     cast.value = await MoviesServices.getDetailCast(id);
+    listMovies = await MoviesServices.getListMoviesByCastid(id);
     isLoading.value = false;
     update();
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/controllers/detailCastController.dart';
+import 'package:food_app/widgets/card_movie_cast.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -118,7 +119,7 @@ class DetailCast extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  'animation',
+                                  cast.type,
                                   style: GoogleFonts.poppins(
                                     color: Color(0xFFFF3466),
                                   ),
@@ -153,14 +154,11 @@ class DetailCast extends StatelessWidget {
                         ),
                         Container(
                           height: 230,
-                          child: ListView(
+                          child: ListView.builder(
+                            itemCount: castC.listMovies.length,
                             scrollDirection: Axis.horizontal,
-                            children: [
-                              CardFilm(),
-                              CardFilm(),
-                              CardFilm(),
-                              CardFilm(),
-                            ],
+                            itemBuilder: (BuildContext context, int index) =>
+                                CardFilm(item: castC.listMovies[index]),
                           ),
                         ),
                         SizedBox(
@@ -193,63 +191,6 @@ class DetailCast extends StatelessWidget {
             ),
           );
         },
-      ),
-    );
-  }
-}
-
-class CardFilm extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 200,
-      width: 143,
-      margin: EdgeInsets.only(
-        right: 10,
-      ),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(
-          color: Colors.grey.withOpacity(0.1),
-          width: 1,
-        ),
-        color: Color(0xFF191926),
-        gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment(0, 1),
-          colors: [
-            Color(0xff404056),
-            Color(0xff222232),
-          ],
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(16),
-              topRight: Radius.circular(16),
-            ),
-            child: Image.network(
-              'https://www.themoviedb.org/t/p/original/pDvArVo8MywQifHDP2JErfO8Sat.jpg',
-              width: double.infinity,
-              height: 160,
-              fit: BoxFit.cover,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Text(
-              'Avangers ',
-              maxLines: 2,
-              style: GoogleFonts.poppins(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ],
       ),
     );
   }
