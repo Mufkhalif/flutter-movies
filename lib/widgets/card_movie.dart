@@ -5,7 +5,6 @@ import 'package:food_app/models/movie_model.dart';
 import 'package:food_app/pages/detail_movie_pages.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 
 class CardMovie extends StatelessWidget {
   final int index;

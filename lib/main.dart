@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/pages/chose_session_pages.dart';
-import 'package:food_app/pages/detail_cast_pages.dart';
-import 'package:food_app/pages/home_movie.dart';
+import 'package:food_app/pages/select_seat_pages.dart';
 import 'package:get/route_manager.dart';
 
 void main() {
@@ -13,9 +12,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      // home: HomeMovie(),
-      home: ChoseSessionPage(),
-    );
+        debugShowCheckedModeBanner: false,
+        // home: HomeMovie(),
+        // home: ChoseSessionPage(),
+        home: SelectSeatPages());
   }
 }
