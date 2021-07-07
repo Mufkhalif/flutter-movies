@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/pages/chose_session_pages.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Footer extends StatelessWidget {
@@ -39,27 +41,32 @@ class Footer extends StatelessWidget {
               width: 10,
             ),
             Expanded(
-              child: Container(
-                padding: EdgeInsets.symmetric(vertical: 14, horizontal: 10),
-                decoration: BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: BorderRadius.circular(30),
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [
-                      Color(0xff8036E7).withOpacity(0.4),
-                      Color(0xffFF3365),
-                    ],
+              child: GestureDetector(
+                onTap: () {
+                  Get.to(() => ChoseSessionPage());
+                },
+                child: Container(
+                  padding: EdgeInsets.symmetric(vertical: 14, horizontal: 10),
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    borderRadius: BorderRadius.circular(30),
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        Color(0xff8036E7).withOpacity(0.4),
+                        Color(0xffFF3365),
+                      ],
+                    ),
                   ),
-                ),
-                child: Text(
-                  'BOOK YOUR TICKET',
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.poppins(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 12),
+                  child: Text(
+                    'BOOK YOUR TICKET',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.poppins(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12),
+                  ),
                 ),
               ),
             ),

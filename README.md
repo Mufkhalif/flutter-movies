@@ -1,16 +1,41 @@
-# food_app
+# Movie App
 
-A new Flutter project.
+Design Movie App from Figma
 
-## Getting Started
+## Resource
 
-This project is a starting point for a Flutter application.
+- [Api the moviedb](#code)
+- [Figma design](#code)
 
-A few resources to get you started if this is your first Flutter project:
+## Package
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- [flutter_getx](#code)
+- [google_fonts](#code)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## Screenshoot
+
+## 1. Home Movie
+
+![image info](./screenshoots/home.png)
+
+ <br>
+ 
+## 2. Detail Movie
+
+![image info](./screenshoots/detail_movie.png)
+
+ <br>
+
+## 3. Detail Cast
+
+![image info](./screenshoots/detail_cast.png)
+
+ <br>
+
+## 4. Select Seats Book
+
+![image info](./screenshoots/select_seats.png)
+
+  <br>

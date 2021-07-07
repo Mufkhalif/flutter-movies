@@ -51,30 +51,14 @@ class CardMovie extends StatelessWidget {
                     topRight: Radius.circular(16),
                   ),
                   child: Hero(
-                      tag: item.id,
-                      child: Image.network(
-                        item.backdropPath,
-                        width: double.infinity,
-                        height: Get.height * 0.26,
-                        fit: BoxFit.cover,
-                      )
-
-                      // CachedNetworkImage(
-                      //   imageUrl: item.backdropPath,
-                      // width: double.infinity,
-                      // height: Get.height * 0.26,
-                      //   fit: BoxFit.cover,
-                      //   placeholder: (BuildContext context, String url) =>
-                      //       Container(
-                      //     width: double.infinity,
-                      //     height: Get.height * 0.26,
-                      //     child: Image.asset(
-                      //       'assets/images/placeholder.jpg',
-                      //       fit: BoxFit.cover,
-                      //     ),
-                      //   ),
-                      // ),
-                      ),
+                    tag: item.id,
+                    child: Image.network(
+                      item.backdropPath,
+                      width: double.infinity,
+                      height: Get.height * 0.26,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
                 Container(
                   width: double.infinity,
@@ -155,9 +139,7 @@ class CardMovie extends StatelessWidget {
                               color: Color(0xFFFF3365),
                               size: 10,
                             ),
-                            onRatingUpdate: (rating) {
-                              print(rating);
-                            },
+                            onRatingUpdate: (rating) {},
                           ),
                           SizedBox(width: 10),
                           Text(

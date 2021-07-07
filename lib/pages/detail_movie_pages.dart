@@ -152,9 +152,7 @@ class MainContent extends StatelessWidget {
                     color: Color(0xFFFF3466),
                     size: 10,
                   ),
-                  onRatingUpdate: (rating) {
-                    print(rating);
-                  },
+                  onRatingUpdate: (rating) {},
                 ),
                 SizedBox(width: 10),
                 Text(
@@ -212,15 +210,18 @@ class MainContent extends StatelessWidget {
                 Text(
                   'Cast',
                   style: GoogleFonts.poppins(
-                      color: Colors.white, fontWeight: FontWeight.bold),
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 Spacer(),
                 Text(
                   'See All',
                   style: GoogleFonts.poppins(
-                      color: Colors.white.withOpacity(
-                    0.7,
-                  )),
+                    color: Colors.white.withOpacity(
+                      0.7,
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -232,8 +233,9 @@ class MainContent extends StatelessWidget {
               child: ListView.builder(
                 itemCount: movieC.casts.length,
                 scrollDirection: Axis.horizontal,
-                itemBuilder: (BuildContext context, int index) =>
-                    CardVideo(item: movieC.casts[index]),
+                itemBuilder: (BuildContext context, int index) => CardVideo(
+                  item: movieC.casts[index],
+                ),
               ),
             ),
             SizedBox(

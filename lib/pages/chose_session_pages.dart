@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_app/controllers/chooseSessionController.dart';
+import 'package:food_app/pages/select_seat_pages.dart';
 import 'package:food_app/themes/themes.dart';
 import 'package:food_app/widgets/button_day.dart';
 import 'package:food_app/widgets/button_time.dart';
@@ -22,9 +23,7 @@ class ChoseSessionPage extends StatelessWidget {
         leading: GetBuilder<ChooseController>(
           builder: (_) => GestureDetector(
             onTap: () {
-              if (chooseC.isOpenListCinema.value) {
-                chooseC.updateOpenCinema();
-              }
+              Get.back();
             },
             child: Icon(
               Icons.keyboard_arrow_left_outlined,
@@ -41,9 +40,9 @@ class ChoseSessionPage extends StatelessWidget {
         ),
       ),
       floatingActionButton: GradientButton(
-        title: 'CHOOSE SESSION',
+        title: 'SELECT SEATS',
         onTap: () {
-          print('hello');
+          Get.to(() => SelectSeatPages());
         },
       ),
       body: SingleChildScrollView(

@@ -35,3 +35,95 @@ var dummyCinema = [
     "address": "Głębocka 15, 03-287",
   },
 ];
+
+var dummyList = [
+  {
+    "row": "A",
+    "count": [
+      {"id": 1, "type": "available"},
+      {"id": 2, "type": "available"},
+      {"id": 3, "type": "available"},
+      {"id": 4, "type": "available"},
+      {"id": 5, "type": "available"},
+      {"id": 6, "type": "available"},
+    ]
+  },
+  {
+    "row": "B",
+    "count": [
+      {"id": 1, "type": "available"},
+      {"id": 2, "type": "available"},
+      {"id": 3, "type": "available"},
+      {"id": 4, "type": "available"},
+      {"id": 5, "type": "available"},
+      {"id": 6, "type": "available"},
+      {"id": 7, "type": "available"},
+      {"id": 8, "type": "available"},
+    ]
+  },
+  {
+    "row": "C",
+    "count": [
+      {"id": 1, "type": "selected"},
+      {"id": 2, "type": "booked"},
+      {"id": 3, "type": "available"},
+      {"id": 4, "type": "available"},
+      {"id": 5, "type": "available"},
+      {"id": 6, "type": "available"},
+      {"id": 7, "type": "available"},
+      {"id": 8, "type": "available"},
+    ]
+  },
+  {
+    "row": "D",
+    "count": [
+      {"id": 1, "type": "available"},
+      {"id": 2, "type": "available"},
+      {"id": 3, "type": "available"},
+      {"id": 4, "type": "available"},
+      {"id": 5, "type": "available"},
+      {"id": 6, "type": "available"},
+      {"id": 7, "type": "available"},
+      {"id": 8, "type": "available"},
+    ]
+  },
+  {
+    "row": "F",
+    "count": [
+      {"id": 1, "type": "available"},
+      {"id": 2, "type": "available"},
+      {"id": 3, "type": "available"},
+      {"id": 4, "type": "available"},
+      {"id": 5, "type": "available"},
+      {"id": 6, "type": "available"},
+      {"id": 7, "type": "available"},
+      {"id": 8, "type": "available"},
+    ]
+  },
+  {
+    "row": "G",
+    "count": [
+      {"id": 1, "type": "available"},
+      {"id": 2, "type": "available"},
+      {"id": 3, "type": "available"},
+      {"id": 4, "type": "available"},
+      {"id": 5, "type": "available"},
+      {"id": 6, "type": "available"},
+      {"id": 7, "type": "available"},
+      {"id": 8, "type": "available"},
+    ]
+  },
+  {
+    "row": "G",
+    "count": [
+      {"id": 1, "type": "available"},
+      {"id": 2, "type": "available"},
+      {"id": 3, "type": "available"},
+      {"id": 4, "type": "available"},
+      {"id": 5, "type": "available"},
+      {"id": 6, "type": "available"},
+      {"id": 7, "type": "available"},
+      {"id": 8, "type": "available"},
+    ]
+  },
+];

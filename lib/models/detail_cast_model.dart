@@ -27,7 +27,7 @@ class DetailCastModel {
     return DetailCastModel(
       adult: json['adult'],
       biography: json['biography'],
-      birthday: json['birthday'],
+      birthday: json['birthday'] ?? "",
       gender: json['gender'],
       id: json['id'],
       name: json['name'],
