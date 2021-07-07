@@ -18,24 +18,24 @@ Design Movie App from Figma
 
 ## 1. Home Movie
 
-![image info](./screenshoots/home.png)
+<img src="./screenshoots/home.png" width="250"/>
 
- <br>
- 
+<br> <br>
+
 ## 2. Detail Movie
 
-![image info](./screenshoots/detail_movie.png)
+<img src="./screenshoots/detail_movie.png" width="250"/>
 
- <br>
+<br> <br>
 
 ## 3. Detail Cast
 
-![image info](./screenshoots/detail_cast.png)
+<img src="./screenshoots/detail_cast.png" width="250"/>
 
- <br>
+<br> <br>
 
-## 4. Select Seats Book
+## 4. Select Seats Movie
 
-![image info](./screenshoots/select_seats.png)
+<img src="./screenshoots/select_seats.png" width="250"/>
 
-  <br>
+<br> <br>
