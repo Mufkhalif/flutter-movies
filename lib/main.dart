@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:food_app/pages/home_movie.dart';
 import 'package:get/route_manager.dart';
 
-// add comment for thest code magic
-
 void main() {
   runApp(MyApp());
 }
